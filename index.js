@@ -17,6 +17,13 @@ Do the following:
 
    HINT: no function required
 */
+let votingAge = 17;
+if(votingAge >= 18){
+  console.log('true');
+}
+else{
+  console.log('false');
+}
 
 
 
@@ -30,6 +37,12 @@ Do the following:
 
    HINT: no function required
 */
+let var1 = 1;
+let var2 = 2;
+if(var1 < var2){
+  var1 === var2;
+}
+console.log(var1);
 
 
 
@@ -45,7 +58,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let myString = '1999';
+console.log(parseInt(myString, 10));
 
 
 
@@ -58,9 +72,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+    return a * b;
   }
+  console.log(multiply(5,4));
 
 
 
@@ -74,9 +89,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears (humanAge){
+  let dogAge = humanAge * 7;
+  return dogAge; 
 }
+console.log(dogYears(5));
 
 
 
@@ -132,12 +149,32 @@ Use the game function below to do the following:
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
-*/
-
-function game(user, computer){
-    /*add your code here*/
-}
+*/var computerChoiceRan = Math.floor(Math.random() * 10);
+let computer;
+if  (computerChoiceRan <= 3)
+     computer= "scissor";
   
+ 
+ else if(computerChoiceRan >= 4  && computerChoiceRan<= 6 ){
+    computer =  "rock";}
+
+    else if (computerChoiceRan >= 7 && computerChoiceRan <= 9){
+    computer = "paper";
+   }
+function game(user, computer){
+  
+if (user === computer ){
+return "it's a tie"}
+
+else if(user === "rock" && computer === "paper" || user === "paper" && computer === "scissor" || user === "scissor" && computer === "rock" )
+{
+  return "you lose!"
+}
+else if(user === "rock" && computer === "scissor" || user === "paper" && computer === "rock" || user === "scissor" && computer === "paper" ){
+  return "you win!";}
+}
+console.log(game("rock", computer));
+
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -151,9 +188,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+function miles(kilometers){
+  let milesFormula = kilometers * 0.621371;
+  return milesFormula;
+}
+console.log(miles(1));
 
 
 
@@ -165,10 +204,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
+function feet(centimeter){
+  let feetFormula = centimeter * 30.48;
+  return feetFormula;
+}
+console.log(feet(2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -181,9 +221,11 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+function annoyingSong(soda){
+ return soda + " bottles of soda on the wall," + soda + " bottles of soda, take one down pass it around " + (soda-1)  + " bottles of soda on the wall"
+}
+console.log(annoyingSong(4))
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -201,9 +243,24 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if(score >= 90 && score <= 100){
+    return "you got an A"
   }
+  else if(score >= 80 && score <= 89){
+    return "you got a B"
+  }
+    else if(score >= 70 && score <= 79){
+    return "you got a C"
+    }
+    else if(score >= 60 && score <= 69){
+    return "you got a D"
+    }
+    else if(score <= 59){
+    return "you got an F"
+    }
+}
+console.log(grade(78));
   
   
 
